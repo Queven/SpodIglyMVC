@@ -132,7 +132,9 @@
     <Content Include="Content\Images\spodigly-logo-main.png" />
     <Content Include="Content\Images\twitter-share.png" />
     <Content Include="Content\Images\upload.png" />
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Prototype\Main.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +148,8 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_StoreLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -156,7 +160,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Home\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
