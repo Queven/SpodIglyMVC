@@ -169,6 +169,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201507281852577_InitialCreate.cs" />
+    <Compile Include="Migrations\201507281852577_InitialCreate.Designer.cs">
+      <DependentUpon>201507281852577_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507281910051_AddedNewArival.cs" />
+    <Compile Include="Migrations\201507281910051_AddedNewArival.Designer.cs">
+      <DependentUpon>201507281910051_AddedNewArival.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507281933288_DeleteNewArival.cs" />
+    <Compile Include="Migrations\201507281933288_DeleteNewArival.Designer.cs">
+      <DependentUpon>201507281933288_DeleteNewArival.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Order.cs" />
@@ -195,6 +208,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201507281852577_InitialCreate.resx">
+      <DependentUpon>201507281852577_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507281910051_AddedNewArival.resx">
+      <DependentUpon>201507281910051_AddedNewArival.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507281933288_DeleteNewArival.resx">
+      <DependentUpon>201507281933288_DeleteNewArival.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

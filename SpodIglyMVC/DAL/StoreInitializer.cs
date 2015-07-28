@@ -1,4 +1,5 @@
-﻿using SpodIglyMVC.Models;
+﻿using SpodIglyMVC.Migrations;
+using SpodIglyMVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -9,15 +10,15 @@ using System.Threading.Tasks;
 
 namespace SpodIglyMVC.DAL
 {
-    public class StoreInitializer: DropCreateDatabaseAlways<StoreContext>
+     public class StoreInitializer: MigrateDatabaseToLatestVersion<StoreContext,Configuration>
     {
-        protected override void Seed(StoreContext context)
-        {
-            SeedStoreData(context);
-            base.Seed(context);
-        }
+        //protected override void Seed(StoreContext context)
+        //{
+        //    SeedStoreData(context);
+        //    base.Seed(context);
+        //}
 
-        private void SeedStoreData(StoreContext context)
+        public static void SeedStoreData(StoreContext context)
         {
             var genres = new List<Genre>
             {
@@ -34,7 +35,7 @@ namespace SpodIglyMVC.DAL
                 new Genre() { GenreID = 11, Name = "Inne", IconFilename = "other.png" },
                 new Genre() { GenreID = 12, Name = "Promocje", IconFilename = "promos.png" }
             };
-            genres.ForEach(g => context.Genres.Add(g));
+            genres.ForEach(g => context.Genres.AddOrUpdate(g));
             context.SaveChanges();
 
             var albums = new List<Album>
@@ -50,7 +51,7 @@ namespace SpodIglyMVC.DAL
                 new Album() { AlbumID = 9, ArtistName = "Str8ts", AlbumTitle = "Sneakers Only", Price = 25, CoverFileName = "9.png", IsBestseller = false, DateAdded = new DateTime(2014, 04, 2), GenreID = 2 }
             };
 
-            albums.ForEach(a => context.Albums.Add(a));
+            albums.ForEach(a => context.Albums.AddOrUpdate(a));
             context.SaveChanges();
         }
     }
