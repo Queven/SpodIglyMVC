@@ -22,7 +22,7 @@ namespace SpodIglyMVC.Controllers
         public ActionResult List(string genrename)
         {
             var genre = db.Genres.Include("Albums").Where(g=> g.Name.ToUpper()==genrename.ToUpper()).Single();
-            var albums = db.Albums;
+            var albums = genre.Albums.ToList();
             return View(albums);
         }
         [ChildActionOnly]
