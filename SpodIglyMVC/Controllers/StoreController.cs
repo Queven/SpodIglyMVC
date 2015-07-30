@@ -15,9 +15,10 @@ namespace SpodIglyMVC.Controllers
         {
             return View();
         }
-        public ActionResult Detalis(int id)
+        public ActionResult Details(int id)
         {
-            return View();
+           var album= db.Albums.Find(id);
+            return View(album);
         }
         public ActionResult List(string genrename)
         {

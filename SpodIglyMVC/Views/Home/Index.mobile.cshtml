@@ -26,7 +26,7 @@
             @foreach (var newArrival in Model.NewArrivals)
             {
                 <li>
-                    <a href="@Url.Action("Detalis", "Store", new { id = newArrival.AlbumID })" data-ajax="false">
+                    <a href="@Url.Action("Details", "Store", new { id = newArrival.AlbumID })" data-ajax="false">
                         <img src="@Url.Content("~/Content/Covers/" + newArrival.CoverFileName)">
                         <h2>@newArrival.AlbumTitle</h2>
                         <p>@newArrival.ArtistName</p>

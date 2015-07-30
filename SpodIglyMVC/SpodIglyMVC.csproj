@@ -181,8 +181,15 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\Site.Mobile.css" />
     <Content Include="Global.asax" />
+    <Content Include="Prototype\Cart.html" />
+    <Content Include="Prototype\Login-placeholder.html" />
+    <Content Include="Prototype\Mail1.html" />
+    <Content Include="Prototype\Mail2.html" />
     <Content Include="Prototype\Main.html" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Prototype\OrdersList.html" />
+    <Content Include="Prototype\Product-details.html" />
+    <Content Include="Prototype\ProductList.html" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />
     <Content Include="Scripts\jquery.mobile-1.1.0.js" />
@@ -241,6 +248,7 @@
     <Content Include="Views\Shared\_Layout.Mobile.cshtml" />
     <Content Include="Views\Store\_GenresMenu.cshtml" />
     <Content Include="Views\Store\_ProductList.cshtml" />
+    <Content Include="Views\Store\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

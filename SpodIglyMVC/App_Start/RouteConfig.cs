@@ -14,9 +14,9 @@ namespace SpodIglyMVC
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "ProductDetalis", 
+                name: "ProductDetails", 
                 url: "album-{id}.html", 
-                defaults: new {controller = "Store", action = "Detalis"}
+                defaults: new {controller = "Store", action = "Details"}
                 );
             routes.MapRoute(
                 name: "StaticPages",

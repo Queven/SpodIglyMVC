@@ -30,7 +30,7 @@
                     <a class="addtocartlink" href="@Url.Action("AddToCart", "Cart", new { id = newArrival.AlbumID })">
                         <img src="../Content/Images/cart.png" />
                     </a>
-                    <a class="productdetailslink" href="@Url.Action("Detalis", "Store", new { id = newArrival.AlbumID })">
+                    <a class="productdetailslink" href="@Url.Action("Details", "Store", new { id = newArrival.AlbumID })">
                         <div class="newFlag"></div>
                         <img class="album-cover" src="@Url.Content("~/Content/Covers/" + newArrival.CoverFileName)" />
                         <h1>
@@ -52,7 +52,7 @@
                     <a class="addtocartlink" href="@Url.Action("AddToCart", "Cart", new { id = bestseller.AlbumID })">
                         <img src="../Content/Images/cart.png" />
                     </a>
-                    <a class="productdetailslink" href="@Url.Action("Detalis", "Store", new { id = bestseller.AlbumID })">
+                    <a class="productdetailslink" href="@Url.Action("Details", "Store", new { id = bestseller.AlbumID })">
                         <div class="bestsellerFlag"></div>
                         <img class="album-cover" src="@Url.AlbumCoverPath(bestseller.CoverFileName)" />
                         <h1>
