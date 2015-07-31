@@ -50,11 +50,6 @@
                 $input.autocomplete(options);
             };
           
-                $("#search-filter").each(setupAutoComplete);
-               
-        });
-        $(function () {
-
             var ajaxSubmit = function () {
 
                 var $form = $(this);
@@ -74,7 +69,10 @@
 
                 return false;
             };
+
             $("#search-form").submit(ajaxSubmit);
+           $("#search-filter").each(setupAutoComplete);
+               
         });
 
     </script>
