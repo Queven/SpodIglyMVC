@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace SpodIglyMVC.Controllers
 {
+    [RequireHttps]
     public class AccountController : Controller
     {
         private ApplicationUserManager _userManager;
@@ -85,7 +86,7 @@ namespace SpodIglyMVC.Controllers
 
         public ActionResult Register()
         {
-            return View(); 
+            return View();
         }
         [HttpPost]
         public async Task<ActionResult> Register(RegisterViewModel model)
@@ -128,11 +129,16 @@ namespace SpodIglyMVC.Controllers
             return RedirectToAction("Index", "Home");
         }
         [HttpPost]
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult ExternalLogin(string provider, string returnUrl)
         {
+            // Request a redirect to the external login provider
             return new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));
         }
+
+
+        [AllowAnonymous]
         public async Task<ActionResult> ExternalLoginCallback(string returnUrl)
         {
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
@@ -176,6 +182,8 @@ namespace SpodIglyMVC.Controllers
                         throw new Exception("Registration error");
             }
         }
+
+
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
@@ -207,6 +215,7 @@ namespace SpodIglyMVC.Controllers
                 context.HttpContext.GetOwinContext().Authentication.Challenge(properties, LoginProvider);
             }
         }
-    }
 
+
+    }
 }

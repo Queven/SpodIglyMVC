@@ -2,11 +2,13 @@
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.Facebook;
 //using Microsoft.Owin.Security.Facebook;
 using Owin;
 using SpodIglyMVC.DAL;
 using SpodIglyMVC.Models;
 using System;
+using System.Threading.Tasks;
 
 namespace SpodIglyMVC
 {
@@ -56,18 +58,31 @@ namespace SpodIglyMVC
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //var options = new FacebookAuthenticationOptions()
-            //{
-            //    AppId = "335213909995838",
-            //    AppSecret = "80049ab5e1f27242c29fb2363c064517"
-            //};
+            var options = new FacebookAuthenticationOptions()
+            {
+                AppId = "184003235306035",
+                AppSecret = "6d4196c9b3f642827994c512372771e3",
+                Provider = new FacebookAuthenticationProvider()
+                {
+                    OnAuthenticated = context =>
+                    {
+                        // context.Email == null !
+                        // context.User does not contain any e-mail information!
+                        return Task.FromResult(0);
+                    }
+                },
+                //userInformationEndpoint = "https://graph.facebook.com/v2.5/me?fields=id,name,email,first_name,last_name,location",
+                SignInAsAuthenticationType = DefaultAuthenticationTypes.ExternalCookie,
+                Scope = { "email" }
+
+            };
             //options.Scope.Add("email");
 
-            //app.UseFacebookAuthentication(options);
+            app.UseFacebookAuthentication(options);
 
-            //app.UseGoogleAuthentication(
-            //    clientId: "423286183817-v47kefqspm9fme0uhrqq90k5lvrd82ib.apps.googleusercontent.com",
-                //clientSecret: "UD5BxMUz_KrNV-lvFZHnnwCp");
+            app.UseGoogleAuthentication(
+                clientId: "43256630655-kojpvbdff6c8hcdel6d4fmb5tl3psnti.apps.googleusercontent.com",
+            clientSecret: "texhoxihOF6Gj5QA550UNH3q");
         }
     }
 }
