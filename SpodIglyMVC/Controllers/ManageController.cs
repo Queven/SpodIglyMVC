@@ -25,16 +25,16 @@ namespace SpodIglyMVC.Controllers
 
        // private IMailService mailService;
 
-        public ManageController(StoreContext context)//), IMailService mailService)
-        {
-           // this.mailService = mailService;
-            this.db = context;
-        }
+        //public ManageController(StoreContext context)//), IMailService mailService)
+        //{
+        //   // this.mailService = mailService;
+        //    this.db = context;
+        //}
 
-        public ManageController(ApplicationUserManager userManager)
-        {
-            UserManager = userManager;
-        }
+        //public ManageController(ApplicationUserManager userManager)
+        //{
+        //    UserManager = userManager;
+        //}
         
         public enum ManageMessageId
         {
